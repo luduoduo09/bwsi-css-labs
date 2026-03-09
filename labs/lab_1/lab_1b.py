@@ -55,8 +55,13 @@ def main():
             break
         except ValueError:
             print("Invalid input. Please enter a valid number.")
-    operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
-
+    while True:
+        operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
+        if operation in ["add", "subtract", "multiply", "divide"]:
+            break
+        else:
+            print("Invalid operation. Please choose from 'add', 'subtract', 'multiply', or 'divide'.")
+        
     # Perform the calculation and display the result
     result = simple_calculator(operation, num1, num2)
     print(f"The result of {operation}ing {num1} and {num2} is: {result}")
